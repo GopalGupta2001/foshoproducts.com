@@ -1,0 +1,368 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Header */
+header {
+    background-color: #009688;
+    padding: 10px 0; /* Reduced the padding to fix large gaps */
+    color: #fff;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+header .container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+
+header .header-icon {
+    width: 40px; /* Reduced the icon size */
+    height: 40px; /* Reduced the icon size */
+}
+
+header h1 {
+    font-size: 18px; /* Reduced font size for mobile */
+    font-weight: bold;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: calc(100% - 80px); /* Adjusted to fit the title */
+    margin-left: 10px; /* Reduced the margin to fix the space issue */
+}
+
+header nav ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+header nav ul li a:hover {
+    color: #fff;
+    background-color: #00796b;
+    padding: 8px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    transform: scale(1.1);
+}
+
+header .hamburger-menu {
+    display: none;
+    cursor: pointer;
+}
+
+header .hamburger-menu div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+}
+
+/* Add padding to the body content to prevent overlap with the fixed header */
+body {
+    padding-top: 80px;
+}
+
+/* Intro Section */
+#intro {
+    background-color: #ffffff;
+    padding: 60px 0 40px 0; /* Reduced padding for better space */
+    text-align: center;
+}
+
+#intro h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#intro p {
+    font-size: 16px; /* Adjusted text size */
+    color: #555;
+    margin-bottom: 20px;
+}
+
+/* Features Section */
+#features {
+    padding: 40px 0;
+    background-color: #e0f7fa;
+}
+
+#features h2 {
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 40px;
+    font-weight: bold;
+}
+
+.feature-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    justify-items: center;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    margin: 10px;
+}
+
+.feature-card img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 15px;
+}
+
+.feature-card h3 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.feature-card p {
+    font-size: 16px;
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Image Gallery Section */
+#gallery {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+#gallery h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    justify-items: center;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.gallery-images img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05);
+}
+
+/* Contact Section */
+#contact {
+    padding: 40px 0;
+    background-color: #e0f7fa;
+    text-align: center;
+}
+
+#contact h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#contact p {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+/* Footer Section */
+footer {
+    background-color: #009688;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Responsive Design - Mobile (up to 480px) */
+@media screen and (max-width: 480px) {
+    header .container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 18px;
+        max-width: 100%;
+        margin-left: 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbar.show-menu {
+        display: flex;
+    }
+
+    .feature-cards {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    .gallery-images {
+        grid-template-columns: 1fr;
+        gap: 15px;
+    }
+
+    #intro h2 {
+        font-size: 28px;
+    }
+
+    #intro p {
+        font-size: 16px;
+    }
+
+    #features h2 {
+        font-size: 26px;
+    }
+
+    .feature-card h3 {
+        font-size: 18px;
+    }
+
+    #gallery h2 {
+        font-size: 24px;
+    }
+
+    footer p {
+        font-size: 14px;
+    }
+}
+
+/* Responsive Design - Tablet (481px to 768px) */
+@media screen and (max-width: 768px) {
+    header .container {
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    header h1 {
+        font-size: 22px;
+        margin-left: 10px;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    header nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    header nav ul li {
+        padding: 10px;
+        width: 100%;
+        text-align: center;
+    }
+
+    #navbar.show-menu {
+        display: flex;
+    }
+
+    .feature-cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .gallery-images {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    #intro h2 {
+        font-size: 32px;
+    }
+
+    #intro p {
+        font-size: 18px;
+    }
+
+    #features h2 {
+        font-size: 28px;
+    }
+
+    .feature-card h3 {
+        font-size: 20px;
+    }
+
+    #gallery h2 {
+        font-size: 26px;
+    }
+
+    footer p {
+        font-size: 16px;
+    }
+}
